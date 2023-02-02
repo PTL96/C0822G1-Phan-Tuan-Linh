@@ -1,0 +1,101 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Nguyễn Thị Hào",
+      "gender": 0,
+      "dayOfBirth": "1970-11-07",
+      "idCard": "348957435",
+      "phoneNumber": "0986478421",
+      "email": "nguyenhao@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+
+    {
+      "id": 2,
+      "name": "Nguyễn Thị CDD",
+      "gender": 0,
+      "dayOfBirth": "1970-11-07",
+      "idCard": "348957435",
+      "phoneNumber": "0986478421",
+      "email": "nguyenhao@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+
+    {
+      "id": 3,
+      "name": "Nguyễn Thị Tr",
+      "gender": 0,
+      "dayOfBirth": "1970-11-07",
+      "idCard": "348957435",
+      "phoneNumber": "0986478421",
+      "email": "nguyenhao@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    },
+
+    {
+      "id": 4,
+      "name": "Nguyễn Thị DG",
+      "gender": 0,
+      "dayOfBirth": "1970-11-07",
+      "idCard": "348957435",
+      "phoneNumber": "0986478421",
+      "email": "nguyenhao@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+
+    {
+      "id": 5,
+      "name": "Nguyễn Thị BV",
+      "gender": 0,
+      "dayOfBirth": "1970-11-07",
+      "idCard": "348957435",
+      "phoneNumber": "0986478421",
+      "email": "nguyenhao@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      }
+    }
+  ],
+
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}
