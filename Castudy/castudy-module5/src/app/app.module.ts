@@ -14,6 +14,8 @@ import { CustomerListComponent } from './Customer/customer-list/customer-list.co
 import { CustomerCreateComponent } from './Customer/customer-create/customer-create.component';
 import { CustomerUpdateComponent } from './Customer/customer-update/customer-update.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ContractListComponent } from './Contract/contract-list/contract-list.component';
+import { ContractCreateComponent } from './Contract/contract-create/contract-create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {HttpClientModule} from "@angular/common/http";
     FacilityUpdateComponent,
     CustomerListComponent,
     CustomerCreateComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    ContractListComponent,
+    ContractCreateComponent
   ],
   imports: [
     BrowserModule,
