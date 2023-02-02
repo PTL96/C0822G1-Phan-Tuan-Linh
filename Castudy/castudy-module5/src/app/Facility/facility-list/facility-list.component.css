@@ -1,0 +1,10 @@
+body{
+  background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0);height: 100vh; overflow:hidden;
+  font-family: monospace;
+}
+h1 {
+  color: #FFAB59;
+  margin: 0;
+  font-size: 40px;
+  font-family: 'Snowburst One', cursive
+}
