@@ -1,0 +1,53 @@
+{
+  "contract": [
+    {
+      "id": 1,
+      "customerName": "Nguyễn Thị Hào",
+      "employeeName": "Hoàng Trần Nhi Nhi",
+      "facilityName": "Villa",
+      "starDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": 300000
+    },
+
+    {
+      "id": 2,
+      "customerName": "Nguyễn Thị Hào",
+      "employeeName": "Hoàng Trần Nhi Nhi",
+      "facilityName": "Villa",
+      "starDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": 300000
+    },
+
+    {
+      "id": 3,
+      "customerName": "Nguyễn Thị Hào",
+      "employeeName": "Hoàng Trần Nhi Nhi",
+      "facilityName": "Villa",
+      "starDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": 300000
+    },
+
+    {
+      "id": 4,
+      "customerName": "Nguyễn Thị Hào",
+      "employeeName": "Hoàng Trần Nhi Nhi",
+      "facilityName": "Villa",
+      "starDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": 300000
+    },
+
+    {
+      "id": 5,
+      "customerName": "Nguyễn Thị Hào",
+      "employeeName": "Hoàng Trần Nhi Nhi",
+      "facilityName": "Villa",
+      "starDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": 300000
+    }
+  ]
+}
