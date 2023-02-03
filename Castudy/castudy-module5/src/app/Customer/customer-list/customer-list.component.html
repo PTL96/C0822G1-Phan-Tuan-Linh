@@ -1,7 +1,7 @@
-
+<app-header></app-header>
 <div id="container">
   <a>
-    <button routerLink="create" type="button" class="btn btn-primary animationTop delay-01" value="Add New"
+    <button routerLink="/customer/create" type="button" class="btn btn-primary animationTop delay-01" value="Add New"
             style="float: right; font-size: 16px; margin-top: 57px">Add New
     </button>
   </a>
@@ -21,7 +21,7 @@
       <button class="btn btn-primary animationTop delay-04" type="submit">Search</button>
     </form>
   </div>
-  <h1 style="margin-left: 40%">CUSTOMER</h1>
+  <h1 style="margin-left: 45%; margin-top: 53px">CUSTOMER</h1>
   <table class="table table-hover" style="text-align: center">
     <thead>
     <tr class="animationTop delay-05">
@@ -39,7 +39,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr style="text-align: center" *ngFor="let item of customer |paginate:{itemsPerPage: 1, currentPage: p}" class="animationTop delay-06">
+    <tr style="text-align: center" *ngFor="let item of customer |paginate:{itemsPerPage: 5, currentPage: p}" class="animationTop delay-06">
       <td class="animationTop delay-07">{{item.id}}</td>
       <td class="animationTop delay-07">{{item.name}}</td>
       <td class="animationTop delay-07">{{item.dayOfBirth}}</td>
@@ -54,10 +54,10 @@
 
 
       <td>
-        <a [routerLink]="['update/', item.id]" class="btn btn-warning animationTop delay-17" style="font-size: 14px">Update</a>
+        <a [routerLink]="['/customer/update/', item.id]" class="btn btn-warning animationTop delay-08" style="font-size: 14px">Update</a>
       </td>
       <td>
-        <a class="btn btn-danger animationTop delay-18" type="button"
+        <a class="btn btn-danger animationTop delay-09" type="button"
            data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 14px" (click)="temp=item">Delete</a>
       </td>
     </tr>
@@ -65,28 +65,26 @@
   </table>
   <pagination-controls (pageChange)="p=$event"></pagination-controls>
 
-
-  <div class="snow"></div>
 </div>
 
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--  <div class="modal-dialog">-->
-<!--    <div class="modal-content" style="background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0); overflow:hidden;">-->
-<!--      <div class="modal-header">-->
-<!--        <h2 class="modal-title fs-5" id="exampleModalLabel">Xóa thông tin sản phẩm</h2>-->
-<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--      </div>-->
-<!--      <div class="modal-body">-->
-<!--        <p style="color:red">Bạn có chắc muốn xóa {{temp.name}}</p>-->
-<!--      </div>-->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>-->
-<!--        <button type="button" class="btn btn-primary" (click)="delete()" data-bs-dismiss="modal">Xóa</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0); overflow:hidden;">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel">Xóa thông tin sản phẩm</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 style="color:red">Delete customer ?<br> {{temp.name}}</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-primary" (click)="deleteCustomer()" data-bs-dismiss="modal">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
 
 
 
