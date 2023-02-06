@@ -1,0 +1,7 @@
+{{like}} likes. <span *ngIf="like==0; else khac">
+  <button class="btn btn-outline-success" (click)="likeThis()">Like</button>
+</span>
+<ng-template #khac>
+  <button class="btn btn-outline-warning" (click)="likeThisThat()">Unlike</button>
+</ng-template>
+
