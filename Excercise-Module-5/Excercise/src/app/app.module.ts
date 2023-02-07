@@ -10,6 +10,8 @@ import { HeaderComponent } from './ss4-Angular-Template/header/header.component'
 import { FooterComponent } from './ss4-Angular-Template/footer/footer.component';
 import {FormsModule} from "@angular/forms";
 import { LikeComponent } from './ss4-Angular-Template/like/like.component';
+import { CountdowTimerComponent } from './ss5-Component-Interaction/countdow-timer/countdow-timer.component';
+import { RatingBarComponent } from './ss5-Component-Interaction/rating-bar/rating-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LikeComponent } from './ss4-Angular-Template/like/like.component';
     HackernewsComponent,
     HeaderComponent,
     FooterComponent,
-    LikeComponent
+    LikeComponent,
+    CountdowTimerComponent,
+    RatingBarComponent
   ],
   imports: [
     BrowserModule,
