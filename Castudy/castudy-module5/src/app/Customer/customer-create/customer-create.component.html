@@ -67,7 +67,7 @@
           <span class="chutieude"
                 *ngIf="formCreate.controls.address.hasError('required') && formCreate.controls.address.touched">Cannot be left blank !</span>
           <span class="chutieude"
-                *ngIf="formCreate.controls.address.hasError('maxLength') && formCreate.controls.address.touched">Address is too long</span>
+                *ngIf="formCreate.controls.address.hasError('maxlength') && formCreate.controls.address.touched">Address is too long</span>
           <input class="form-control animationTop delay-16" type="text" placeholder="Address"
                  formControlName="address"/>
         </div>

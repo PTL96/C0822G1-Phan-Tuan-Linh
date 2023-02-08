@@ -1,0 +1,94 @@
+<app-header></app-header>
+<div id="container">
+  <a>
+    <button routerLink="/customer/list" type="button" class="btn btn-primary" value="Back"
+            style="float: right; font-size: 16px; margin-top: 57px">Back
+    </button>
+  </a>
+  <h1 style="margin-left: 40%; margin-top: 50px">CREATE FACILITY</h1>
+
+  <form class="form" [formGroup]="createForm" (ngSubmit)="createFacility()" style="text-align: center" *ngIf="createForm">
+    <div style="margin-right: 500px; margin-left: 500px; color: white">
+      <div>
+        <label class="form-label animationTop delay-03">Facility Name:</label><br>
+        <span class="chutieude" *ngIf="createForm.controls.name.hasError('required')&& createForm.controls.name.touched">Cannot be left blank !</span>
+        <span class="chutieude" *ngIf="createForm.controls.name.hasError('minlength')&& createForm.controls.name.touched">Min length 4 characters</span>
+        <span class="chutieude" *ngIf="createForm.controls.name.hasError('maxlength')&& createForm.controls.name.touched">Max length 50 characters</span>
+        <input class="form-control animationTop delay-04" type="text" placeholder="Facility Name"
+               formControlName="name"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Area :</label><br>
+                <span class="chutieude" *ngIf="createForm.controls.area.hasError('min')&& createForm.controls.area.touched">Min number 10</span>
+                <span class="chutieude" *ngIf="createForm.controls.area.hasError('max')&& createForm.controls.area.touched">Max number 10000</span>
+        <input class="form-control animationTop delay-06" type="number" placeholder="Area"
+               formControlName="area"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Cost :</label><br>
+        <span class="chutieude" *ngIf="createForm.controls.cost.hasError('max')&& createForm.controls.cost.touched">Min number 0</span>
+        <span class="chutieude" *ngIf="createForm.controls.cost.hasError('min')&& createForm.controls.cost.touched">Max number 100.000.000VND</span>
+
+        <input class="form-control animationTop delay-06" type="number" placeholder="Cost"
+               formControlName="cost"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Facility Free :</label><br>
+        <span class="chutieude" *ngIf="createForm.controls.facilityFree.hasError('required')&& createForm.controls.facilityFree.touched">Cannot be left blank !</span>
+        <span class="chutieude" *ngIf="createForm.controls.facilityFree.hasError('minlength')&& createForm.controls.facilityFree.touched">Min length 1 characters</span>
+        <span class="chutieude" *ngIf="createForm.controls.facilityFree.hasError('maxlength')&& createForm.controls.facilityFree.touched">Max length 100 characters</span>
+        <input class="form-control animationTop delay-06" type="text" placeholder="Facility Free"
+               formControlName="facilityFree"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05">Max People :</label><br>
+        <span class="chutieude" *ngIf="createForm.controls.maxPeople.hasError('min')&& createForm.controls.maxPeople.touched">Min number 1</span>
+        <span class="chutieude" *ngIf="createForm.controls.maxPeople.hasError('max')&& createForm.controls.maxPeople.touched">Max number 20</span>
+        <input class="form-control animationTop delay-06" type="number" placeholder="Max People"
+               formControlName="maxPeople"/>
+      </div>
+
+      <div style="float: right">
+        <label class="form-label animationTop delay-07">Standard Room :</label><br>
+        <select style="font-size: 15px; text-align: center" class="animationTop delay-08" formControlName="standardRoom">
+          <option value="">Standard Room:</option>
+          <option value="1">Vip</option>
+          <option value="0">Normal</option>
+        </select>
+      </div>
+
+        <div style="float: left">
+          <label class="form-label animationTop delay-17">Facility Type :</label><br>
+          <select style="font-size: 15px;" class="animationTop delay-18" formControlName="facilityType">
+            <option value="">Customer type :</option>
+            <option *ngFor="let item of facilityType" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </div>
+
+      <div>
+        <label class="form-label animationTop delay-17">Rent Type :</label><br>
+        <select style="font-size: 15px;" class="animationTop delay-18" formControlName="rentType">
+          <option value="">Rent type :</option>
+          <option *ngFor="let item of rentType" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+
+
+      <div>
+        <label class="form-label animationTop delay-05">Number Floors :</label><br>
+        <span class="chutieude" *ngIf="createForm.controls.numberFloors.hasError('min')&& createForm.controls.numberFloors.touched">Min number 1</span>
+        <span class="chutieude" *ngIf="createForm.controls.numberFloors.hasError('max')&& createForm.controls.numberFloors.touched">Max number 10</span>
+        <input class="form-control animationTop delay-06" type="number" placeholder="Number Floors"
+               formControlName="numberFloors"/>
+      </div>
+
+      <div style="text-align: center">
+        <input type="submit" value="Save" class="m-3 btn btn-info animationTop delay-19"></div>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

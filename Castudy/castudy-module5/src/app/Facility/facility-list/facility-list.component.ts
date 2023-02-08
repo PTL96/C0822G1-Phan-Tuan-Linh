@@ -9,12 +9,10 @@ import {Facility} from "../model/facility";
   styleUrls: ['./facility-list.component.css']
 })
 export class FacilityListComponent implements OnInit {
-
   facility: Facility[] = [];
   temp: Facility ={};
 
-  constructor(private facilityService: FacilityService,
-              private router: Router,) {
+  constructor(private facilityService: FacilityService) {
   }
 
   ngOnInit(): void {
@@ -27,8 +25,11 @@ export class FacilityListComponent implements OnInit {
     })
   }
 
-  // detailFacility(): void{
-  //   this.facilityService.detail(this.temp.id).subscribe(data=>{
-  //   })
-  // }
+  deleteFacility(id : number | undefined): void {
+    this.facilityService.delete(id).subscribe(data=>{
+      alert("Deleted")
+      this.ngOnInit()
+    });
+  }
+
 }
