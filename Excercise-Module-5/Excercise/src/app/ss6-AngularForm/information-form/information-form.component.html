@@ -1,0 +1,39 @@
+<h1>REGISTRATION FORM</h1>
+
+<form [formGroup]="fomReactive" (ngSubmit)="saveInformation()">
+  <label>ID :</label>
+  <span style="color: red" *ngIf="fomReactive.controls.id.hasError('required')">ID không được để trống</span>
+  <input formControlName="id"><br>
+
+  <label>Name: </label>
+  <span style="color: red" *ngIf="fomReactive.controls.name.hasError('required')&& fomReactive.controls.name.touched">Tên không được để trống</span>
+  <span style="color: red" *ngIf="fomReactive.controls.name.hasError('minlength')">Tên không được ngắn hơn 5 ký tự</span>
+  <span style="color: red" *ngIf="fomReactive.controls.name.hasError('maxlength')">Tên không được quá 50 ký tự</span>
+  <input formControlName="name"><br>
+  <label>Giới tính:</label><br>
+  <input type ="radio" id="nam" value="nam" name="name" formControlName="name">
+  <label for="nam">Nam</label>
+  <input type ="radio" id="nu" value="nu" name="name" formControlName="name">
+  <label for="nu">Nữ</label>
+  <input type ="radio" id="khac" value="khac" name="name" formControlName="name">
+  <label for="khac">Khác</label><br>
+
+  <label>Ngày sinh: </label><br>
+  <input type="date"><br>
+
+  <label>Số CMND:</label><br>
+  <span style="color: red" *ngIf="fomReactive.controls.idCard.hasError('required') && fomReactive.controls.idCard.touched">Số CMND không được để trống</span>
+  <span style="color: red" *ngIf="fomReactive.controls.idCard.hasError('pattern')">Số CMND chưa đúng định dạng</span>
+  <input formControlName="idCard"><br>
+
+  <label>Số điện thoại:</label><br>
+  <span style="color: red" *ngIf="fomReactive.controls.phoneNumber.hasError('required') && fomReactive.controls.phoneNumber.touched">Số điện thoại không được để trống</span>
+  <span style="color: red" *ngIf="fomReactive.controls.phoneNumber.hasError('pattern')">Số điện thoại không đúng định dạng</span>
+  <input formControlName="phoneNumber"><br>
+
+  <label>Địa chỉ: </label><br>
+  <span style="color: red" *ngIf="fomReactive.controls.address.hasError('required') && fomReactive.controls.address.touched">Địa chỉ không được để trống</span>
+  <input formControlName="address"><br>
+  <button type="submit">Lưu</button>
+</form>
+

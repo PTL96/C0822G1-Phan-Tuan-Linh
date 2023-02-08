@@ -1,0 +1,15 @@
+<form [formGroup] = "ngForm" (ngSubmit)="save()">
+  <label>Tài khoản :</label><br>
+  <span style="color: red" *ngIf="ngForm.controls.userName.hasError('required')&& ngForm.controls.userName.touched">User name không được để trống</span>
+  <span style="color: red" *ngIf="ngForm.controls.userName.hasError('email')">Email không đúng định dạng</span><br>
+  <input  type ="text" formControlName="userName"><br><br>
+
+  <label>Mật khẩu :</label><br>
+  <span style="color: red" *ngIf="ngForm.controls.password.hasError('required')&& ngForm.controls.password.touched">Password không được để trống</span>
+  <span style="color: red" *ngIf="ngForm.controls.password.hasError('minlength')&& ngForm.controls.password.touched">Password ít nhất 6 ký tự</span><br>
+  <span style="color: red" *ngIf="ngForm.controls.password.hasError('maxlength')&& ngForm.controls.password.touched">Password tối đa 50 ký tự</span>
+  <input  type ="password" formControlName="password"><br><br>
+
+  <button type="submit" value="them moi">Lưu</button>
+  <button type="reset" value="huy">Hủy</button>
+</form>

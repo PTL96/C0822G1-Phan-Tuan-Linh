@@ -8,10 +8,12 @@ import { ColorPickComponent } from './ss3-Anguar-Overview/ColorPick/color-pick/c
 import { HackernewsComponent } from './ss4-Angular-Template/hackernews/hackernews.component';
 import { HeaderComponent } from './ss4-Angular-Template/header/header.component';
 import { FooterComponent } from './ss4-Angular-Template/footer/footer.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LikeComponent } from './ss4-Angular-Template/like/like.component';
 import { CountdowTimerComponent } from './ss5-Component-Interaction/countdow-timer/countdow-timer.component';
 import { RatingBarComponent } from './ss5-Component-Interaction/rating-bar/rating-bar.component';
+import { InformationFormComponent } from './ss6-AngularForm/information-form/information-form.component';
+import { LoginComponent } from './ss6-AngularForm/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,16 @@ import { RatingBarComponent } from './ss5-Component-Interaction/rating-bar/ratin
     FooterComponent,
     LikeComponent,
     CountdowTimerComponent,
-    RatingBarComponent
+    RatingBarComponent,
+    InformationFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
