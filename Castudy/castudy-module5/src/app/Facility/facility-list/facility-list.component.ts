@@ -11,6 +11,7 @@ import {Facility} from "../model/facility";
 export class FacilityListComponent implements OnInit {
 
   facility: Facility[] = [];
+  temp: Facility ={};
 
   constructor(private facilityService: FacilityService,
               private router: Router,) {
@@ -25,4 +26,9 @@ export class FacilityListComponent implements OnInit {
       this.facility = data;
     })
   }
+
+  // detailFacility(): void{
+  //   this.facilityService.detail(this.temp.id).subscribe(data=>{
+  //   })
+  // }
 }

@@ -1,33 +1,30 @@
 <app-header></app-header>
 <div id="container">
   <a>
-    <button routerLink="create" type="button" class="btn btn-primary animationTop delay-01" value="Add New"
+    <button routerLink="/contract/create" type="button" class="btn btn-primary animationTop delay-01" value="Add New"
             style="float: right; font-size: 16px; margin-top: 57px">Add New
     </button>
   </a>
   <div>
     <form class="d-flex animationTop delay-02" role="search"  style="float: left; font-size: 17px; margin-top: 57px">
       <input class="form-control me-2" name="names" type="search" placeholder="Search name" aria-label="Search">
-      <input class="form-control me-2" name="email" type="search" placeholder="Search email" aria-label="Search">
+      <input class="form-control me-2" name="email" type="date" placeholder="Star Day" aria-label="Search">
       <select class="form-select animationTop delay-03" aria-label="Default select example" name="customer_type"
               style="padding-right: 10px">
-        <option selected value="">Customer type:</option>
-        <option value="1">Diamond</option>
-        <option value="2">Platinum</option>
-        <option value="3">Gold</option>
-        <option value="4">Silver</option>
-        <option value="5">Member</option>
+        <option selected value="">Facility Name:</option>
+        <option value="1">Villa</option>
+        <option value="2">House</option>
+        <option value="3">Room</option>
       </select>
-      <button class="btn btn-primary animationTop delay-04" type="submit">Search</button>
+      <button style="margin-left: 10px" class="btn btn-primary animationTop delay-04" type="submit">Search</button>
     </form>
   </div>
-  <h1 style="margin-left: 40%">CONTRACT</h1>
+  <h1 style="margin-left: 45%; margin-top: 53px">CONTRACT</h1>
   <table class="table table-hover" style="text-align: center">
     <thead>
     <tr class="animationTop delay-05">
       <th>#</th>
       <th>Customer Name</th>
-      <th>Employee Name</th>
       <th>Facility Name</th>
       <th>Start Day</th>
       <th>End Day</th>
@@ -37,22 +34,19 @@
     </tr>
     </thead>
     <tbody>
-    <tr style="text-align: center" *ngFor="let item of contract |paginate:{itemsPerPage: 1, currentPage: p}" class="animationTop delay-06">
+    <tr style="text-align: center" *ngFor="let item of contract |paginate:{itemsPerPage: 5, currentPage: p}" class="animationTop delay-06">
       <td class="animationTop delay-07">{{item.id}}</td>
-      <td class="animationTop delay-07">{{item.customerName}}</td>
-      <td class="animationTop delay-07">{{item.employeeName}}</td>
-      <td class="animationTop delay-07">{{item.facilityName}}</td>
+      <td class="animationTop delay-07" *ngIf="item.customer">{{item.customer.name}}</td>
+      <td class="animationTop delay-07" *ngIf="item.facility">{{item.facility.name}}</td>
       <td class="animationTop delay-07">{{item.starDay}}</td>
       <td class="animationTop delay-07">{{item.endDay}}</td>
       <td class="animationTop delay-07">{{item.deposit}}</td>
 
-
-
       <td>
-        <a [routerLink]="['update/', item.id]" class="btn btn-warning animationTop delay-17" style="font-size: 14px">Update</a>
+        <a [routerLink]="['/contract/update/', item.id]" class="btn btn-warning animationTop delay-08" style="font-size: 14px">Update</a>
       </td>
       <td>
-        <a class="btn btn-danger animationTop delay-18" type="button"
+        <a class="btn btn-danger animationTop delay-09" type="button"
            data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 14px" (click)="temp=item">Delete</a>
       </td>
     </tr>
@@ -60,7 +54,5 @@
   </table>
   <pagination-controls (pageChange)="p=$event"></pagination-controls>
 
-
-  <div class="snow"></div>
 </div>
 <app-footer></app-footer>

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div id="container">
   <a>
     <button routerLink="/customer/list" type="button" class="btn btn-primary" value="Back"
@@ -10,17 +11,17 @@
     <div style="margin-right: 500px; margin-left: 500px; color: white">
       <div>
         <label class="form-label animationTop delay-03">Customer Name:</label><br>
-        <span class="chutieude"
-              *ngIf="updateForm.controls.name.hasError('required')&& updateForm.controls.name.touched">Cannot be left blank !</span>
-        <span class="chutieude" *ngIf="updateForm.controls.name.hasError('pattern')&& updateForm.controls.name.touched">The name is not in the correct format !</span>
+<!--        <span class="chutieude"-->
+<!--              *ngIf="updateForm.controls.name.hasError('required')&& updateForm.controls.name.touched">Cannot be left blank !</span>-->
+<!--        <span class="chutieude" *ngIf="updateForm.controls.name.hasError('pattern')&& updateForm.controls.name.touched">The name is not in the correct format !</span>-->
         <input class="form-control animationTop delay-04" type="text" placeholder="Customer Name"
                formControlName="name"/>
       </div>
 
       <div>
         <label class="form-label animationTop delay-05"> Day Of Birth :</label><br>
-        <span class="chutieude"
-              *ngIf="updateForm.controls.dayOfBirth.hasError('invalid')&& updateForm.controls.dayOfBirth.touched">You are not 18+</span>
+<!--        <span class="chutieude"-->
+<!--              *ngIf="updateForm.controls.dayOfBirth.hasError('invalid')&& updateForm.controls.dayOfBirth.touched">You are not 18+</span>-->
         <input class="form-control animationTop delay-06" type="date" placeholder="Date Of Birth"
                formControlName="dayOfBirth"/>
         <div>
@@ -85,4 +86,4 @@
     </div>
   </form>
 </div>
-
+<app-footer></app-footer>

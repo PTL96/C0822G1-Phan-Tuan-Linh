@@ -17,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ContractListComponent } from './Contract/contract-list/contract-list.component';
 import { ContractCreateComponent } from './Contract/contract-create/contract-create.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { ContractUpdateComponent } from './Contract/contract-update/contract-update.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     CustomerCreateComponent,
     CustomerUpdateComponent,
     ContractListComponent,
-    ContractCreateComponent
+    ContractCreateComponent,
+    ContractUpdateComponent
   ],
   imports: [
     BrowserModule,

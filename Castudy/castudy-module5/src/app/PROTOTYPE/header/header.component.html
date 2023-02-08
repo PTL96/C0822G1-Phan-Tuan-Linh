@@ -1,22 +1,35 @@
 <header>
   <div class="box">
-    <div class="logo" style="background-color: orange">
-      <h3 style="color: blue; padding-left: 25px">CODEGYM</h3>
+    <div class="logo" style="background-color: blue; cursor: pointer" routerLink="/">
+      <h3 style="color: yellow; padding-left: 25px">CODEGYM</h3>
     </div>
     <div class="menu" style="color: orangered">
-      <ul>
-        <li class="active">
-          <a routerLink="/">HOME</a>
+      <ul style="margin-top: 5px">
+<!--        <li style="padding-top: 10px">-->
+<!--          <button class="btn-outline-warning" routerLink="/">-->
+<!--          <i class="fa-solid fa-house-user"></i>-->
+<!--            HOME</button>-->
+<!--        </li>-->
+        <li class="animationTop delay-1">
+          <a style="color: white" routerLink="/customer/list">
+            <i class="fa-solid fa-user"></i>
+            Customer</a>
         </li>
 
-        <li>
-          <a href="#">INFO</a>
+        <li class="animationTop delay-12">
+          <a style="color: white" routerLink="/facility/list">
+            <i class="fa-solid fa-umbrella"></i>
+            Facility</a>
         </li>
-        <li>
-          <a href="#">CONTACT</a>
+        <li class="animationTop delay-13">
+          <a style="color: white" routerLink="/contract/list">
+            <i class="fa-solid fa-file-signature"></i>
+            Contract</a>
         </li>
-        <li>
-          <a href="#">MESSAGE</a>
+        <li class="animationTop delay-02" style="color:white;">
+          <a href="https://www.facebook.com/login.php/">
+          <i class="fa-solid fa-comment-medical"></i>
+          Chat</a>
         </li>
 
         <li>

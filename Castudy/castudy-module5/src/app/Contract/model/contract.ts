@@ -1,9 +1,10 @@
+import {Customer} from "../../Customer/model/customer";
+import {Facility} from "../../Facility/model/facility";
 
 export interface Contract {
   id?:number,
-  customerName?: string,
-  employeeName?: string,
-  facilityName?: string,
+  customer?: Customer,
+  facility?: Facility,
   starDay?: string,
   endDay?: string,
   deposit?: number,

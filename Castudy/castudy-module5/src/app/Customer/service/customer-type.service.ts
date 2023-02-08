@@ -9,7 +9,8 @@ import {CustomerType} from "../model/customer-type";
 export class CustomerTypeService {
 
   constructor(private httpClient: HttpClient) { }
-CTMT_URL = ("http://localhost:3000/customerType")
+CTMT_URL = ("http://localhost:8080/customerType")
+//   CTMT_URL = ("http://localhost:3000/customerType")
 
   getAll(): Observable<CustomerType[]>{
    return  this.httpClient.get<CustomerType[]>(this.CTMT_URL);

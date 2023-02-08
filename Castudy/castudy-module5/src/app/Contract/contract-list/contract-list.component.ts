@@ -21,6 +21,7 @@ temp : Contract = {};
   getAllContract(){
     this.contractService.getAll().subscribe(data=>{
       this.contract = data;
+      console.log(this.contract);
     })
   }
 

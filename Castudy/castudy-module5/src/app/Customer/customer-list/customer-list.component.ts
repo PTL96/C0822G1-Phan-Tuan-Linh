@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Customer} from "../model/customer";
 import {CustomerService} from "../service/customer.service";
 import {Router} from "@angular/router";
-import {error} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-customer-list',
@@ -35,9 +34,14 @@ export class CustomerListComponent implements OnInit {
       this.ngOnInit()
     }, error1 => {
 
-    },()=>{
+    }, () => {
 
     })
   }
 
+  search(value: string, value2: string) {
+    this.customerService.search(value, value2).subscribe(data => {
+      this.customer = data;
+    })
+  }
 }

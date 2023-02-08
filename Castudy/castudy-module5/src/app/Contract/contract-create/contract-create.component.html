@@ -1,1 +1,55 @@
-<p>contract-create works!</p>
+<app-header></app-header>
+<div id="container">
+  <a>
+    <button routerLink="/contract/list" type="button" class="btn btn-primary" value="Back"
+            style="float: right; font-size: 16px; margin-top: 57px">Back
+    </button>
+  </a>
+  <h1 style="margin-left: 40%; margin-top: 50px">ADD NEW CUSTOMER</h1>
+
+  <form class="form" [formGroup]="formCreate" (ngSubmit)="create()" style="text-align: center; margin-bottom: 50px">
+    <div style="margin-right: 500px; margin-left: 500px; color: white">
+      <div>
+        <label class="form-label animationTop delay-03">Customer Name:</label><br>
+<!--        <span class="chutieude" *ngIf="formCreate.controls.name.hasError('required')&& formCreate.controls.name.touched">Cannot be left blank !</span>-->
+        <select style="font-size: 15px;" class="animationTop delay-03" formControlName="customer">
+          <option value="">Customer name :</option>
+          <option *ngFor="let item of customer" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-03">Facility Name:</label><br>
+<!--        <span class="chutieude" *ngIf="formCreate.controls.name.hasError('required')&& formCreate.controls.name.touched">Cannot be left blank !</span>-->
+        <select style="font-size: 15px;" class="animationTop delay-03" formControlName="facility">
+          <option value="">Facility name :</option>
+          <option *ngFor="let item of facility" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Start Day :</label><br>
+<!--        <span class="chutieude" *ngIf="formCreate.controls.dayOfBirth.hasError('invalid')&& formCreate.controls.dayOfBirth.touched">Cannot be left blank !</span>-->
+        <input class="form-control animationTop delay-06" type="date" placeholder="Start Day"
+               formControlName="starDay"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> End Day :</label><br>
+<!--        <span class="chutieude" *ngIf="formCreate.controls.dayOfBirth.hasError('invalid')&& formCreate.controls.dayOfBirth.touched">Cannot be left blank !</span>-->
+        <input class="form-control animationTop delay-06" type="date" placeholder="End Day"
+               formControlName="endDay"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05">Deposit :</label><br>
+<!--        <span class="chutieude" *ngIf="formCreate.controls.dayOfBirth.hasError('invalid')&& formCreate.controls.dayOfBirth.touched">Cannot be left blank !</span>-->
+        <input class="form-control animationTop delay-06" type="number" placeholder="Deposit"
+               formControlName="deposit"/>
+      </div>
+    </div>
+    <div style="text-align: center">
+      <input type="submit" value="Save" class="m-3 btn btn-info animationTop delay-08"></div>
+  </form>
+<app-footer></app-footer>
+</div>

@@ -7,18 +7,17 @@
   </a>
   <div>
     <form class="d-flex animationTop delay-02" role="search"  style="float: left; font-size: 17px; margin-top: 57px">
-      <input class="form-control me-2" name="names" type="search" placeholder="Search name" aria-label="Search">
-      <input class="form-control me-2" name="email" type="search" placeholder="Search email" aria-label="Search">
+      <input class="form-control me-2" name="names" type="search" placeholder="Search name" aria-label="Search" #name>
       <select class="form-select animationTop delay-03" aria-label="Default select example" name="customer_type"
-              style="padding-right: 10px">
+              style="padding-right: 10px" #customerType>
         <option selected value="">Customer type:</option>
-        <option value="1">Diamond</option>
-        <option value="2">Platinum</option>
-        <option value="3">Gold</option>
-        <option value="4">Silver</option>
-        <option value="5">Member</option>
+        <option value="Diamond">Diamond</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Member">Member</option>
       </select>
-      <button class="btn btn-primary animationTop delay-04" type="submit">Search</button>
+      <button style="margin-left: 10px" class="btn btn-primary animationTop delay-04" type="submit" (click)="search(name.value, customerType.value)">Search</button>
     </form>
   </div>
   <h1 style="margin-left: 45%; margin-top: 53px">CUSTOMER</h1>
@@ -63,6 +62,7 @@
     </tr>
     </tbody>
   </table>
+  <div class="snow"></div>
   <pagination-controls (pageChange)="p=$event"></pagination-controls>
 
 </div>
@@ -85,6 +85,5 @@
   </div>
 </div>
 <app-footer></app-footer>
-
 
 

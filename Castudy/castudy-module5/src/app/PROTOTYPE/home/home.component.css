@@ -169,7 +169,7 @@ body{
 }
 .actor li{
   display: grid;
-  grid-template-columns: 50px auto;
+  grid-template-columns: 33px auto;
   column-gap: 30px;
   margin-bottom: 25px;
 }
@@ -182,7 +182,7 @@ body{
 }
 .actor .content .nameActor{
   font-weight: bold;
-  font-size: large;
+  font-size: small;
   margin-top:5px;
 }
 .actor .content .nameUser{

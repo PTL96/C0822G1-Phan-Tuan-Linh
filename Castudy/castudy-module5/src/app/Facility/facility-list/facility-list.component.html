@@ -1,28 +1,73 @@
 <app-header></app-header>
-<h1 style="margin-left: 40%; margin-top: 60px">PRODUCT LIST</h1>
-
+<div style=" background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0); overflow:hidden;
+  font-family: monospace;">
+  <button routerLink="/facility/create" type="button" class="btn btn-primary animationTop delay-01" value="Add New"
+          style="float: right; font-size: 16px; margin-top: 57px">Add New
+  </button>
+  <form class="d-flex animationTop delay-02" role="search"  style="float: left; font-size: 17px; margin-top: 57px">
+    <input class="form-control me-2" name="names" type="search" placeholder="Search Price" aria-label="Search" >
+    <select class="form-select animationTop delay-03" aria-label="Default select example" name="customer_type"
+            style="padding-right: 10px">
+      <option selected value="">Facility :</option>
+      <option value="Diamond">Villa</option>
+      <option value="Platinum">House</option>
+      <option value="Gold">Room</option>
+    </select>
+    <button style="margin-left: 10px" class="btn btn-primary animationTop delay-04" type="submit" >Search</button>
+  </form>
+<h1 class="delay-05" style="margin-left: 45%; margin-top: 60px">FACILITY</h1>
 <table style="margin-left: 200px">
-  <div class="row">
-    <div class="col-xl-3" *ngFor="let item of facility"
-         style=" margin-top: 100px; text-align: center; margin-left: auto; margin-right: auto">
-      <div class="card"
-           style="width: 16rem; background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0); overflow:hidden;">
-        <img src="https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title" style="color: white; text-align: center">FACILITY</h5>
+<!--  <div class="row ">-->
+<!--    <div class="col-xl-3 " *ngFor="let item of facility"-->
+<!--         style=" margin-top: 40px; text-align: center; margin-left: 50px; margin-right: 50px; margin-bottom: 50px">-->
+<!--      <div class="card "-->
+<!--           style="width: 16rem; background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0); overflow:hidden;">-->
+<!--        <img src="https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg"-->
+<!--             class="card-img-top" alt="...">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title" style="color: white">FACILITY</h5>-->
+<!--        </div>-->
+<!--        <ul class="list-group list-group-flush " style="font-size: small">-->
+<!--          <li class="list-group-item">Facility Name: {{item.name}}</li>-->
+<!--          <li class="list-group-item">Area: {{item.area}}</li>-->
+<!--          <li class="list-group-item">Price: {{item.cost}}</li>-->
+<!--        </ul>-->
+<!--        <div class="card-body">-->
+<!--          <button type="button" class="btn btn-warning" style="font-size: small; float: left">Update</button>-->
+<!--          <button type="button" class="btn btn-secondary" style="font-size: small; margin: auto">Detail</button>-->
+<!--          <button type="button" class="btn btn-danger" style="font-size: small; float: right">Delete</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div class="container">
+    <input type="radio" name="grid" id="grid-1" value="1">
+    <input type="radio" name="grid" id="grid-2" value="2">
+    <input type="radio" name="grid" id="grid-3" value="3">
+    <input type="radio" name="grid" id="grid-4" value="4" checked>
+
+    <div class="filterGrid">
+      <label for="grid-1"><img src="https://raw.githubusercontent.com/HoanghoDev/reponsivegrid/main/grid1.png"></label>
+      <label for="grid-2"><img src="https://raw.githubusercontent.com/HoanghoDev/reponsivegrid/main/grid2.png"></label>
+      <label for="grid-3"><img src="https://raw.githubusercontent.com/HoanghoDev/reponsivegrid/main/grid3.png"></label>
+      <label for="grid-4"><img src="https://raw.githubusercontent.com/HoanghoDev/reponsivegrid/main/grid4.png"></label>
+    </div>
+    <div class="list" style="margin-left: 90px">
+      <div class="item" *ngFor="let item of facility">
+        <div class="img">
+          <img src="https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg">
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Tên dịch vụ: {{item.name}}</li>
-          <li class="list-group-item">Diện tích: {{item.area}}</li>
-          <li class="list-group-item">Giá: {{item.cost}}</li>
-        </ul>
-        <div class="card-body">
-          <button type="button" class="btn btn-warning" style="font-size: small">Update</button>
-          <button type="button" class="btn btn-danger" style="font-size: small; float: right">Delete</button>
+        <div class="content">
+          <div class="category">Facility</div>
+          <div class="title">Facility Name: {{item.name}}</div>
+          <div class="title">Area: {{item.area}}</div>
+          <div class="price">Price: {{item.cost}}</div>
+          <button class="addCard">Add to card</button>
         </div>
       </div>
     </div>
   </div>
 </table>
+</div>
 <app-footer></app-footer>

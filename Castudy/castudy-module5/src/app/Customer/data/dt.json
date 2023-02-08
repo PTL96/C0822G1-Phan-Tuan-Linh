@@ -139,6 +139,20 @@
         "id": 1,
         "name": "Diamond"
       }
+    },
+    {
+      "id": 11,
+      "name": "Linh Phan",
+      "gender": "0",
+      "dayOfBirth": "2000-05-23",
+      "idCard": "234564354",
+      "phoneNumber": "0349373789",
+      "email": "skfreedom45@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
     }
   ],
   "customerType": [

@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./customer-update.component.css']
 })
 export class CustomerUpdateComponent implements OnInit {
-  updateForm?: FormGroup;
+  updateForm: FormGroup | undefined;
   customer: Customer | null | undefined;
   customerType: CustomerType[] = [];
 
