@@ -1,39 +1,64 @@
-<h1>REGISTRATION FORM</h1>
 
-<form [formGroup]="fomReactive" (ngSubmit)="saveInformation()">
-  <label>ID :</label>
-  <span style="color: red" *ngIf="fomReactive.controls.id.hasError('required')">ID không được để trống</span>
-  <input formControlName="id"><br>
+<div id="container">
+  <a>
+    <button routerLink="/" type="button" class="btn btn-primary" value="Back"
+            style="float: right; font-size: 16px; margin-top: 57px">Back
+    </button>
+  </a>
+  <h1 style="margin-left: 40%; margin-top: 60px">REGISTRATION FORM</h1>
 
-  <label>Name: </label>
-  <span style="color: red" *ngIf="fomReactive.controls.name.hasError('required')&& fomReactive.controls.name.touched">Tên không được để trống</span>
-  <span style="color: red" *ngIf="fomReactive.controls.name.hasError('minlength')">Tên không được ngắn hơn 5 ký tự</span>
-  <span style="color: red" *ngIf="fomReactive.controls.name.hasError('maxlength')">Tên không được quá 50 ký tự</span>
-  <input formControlName="name"><br>
-  <label>Giới tính:</label><br>
-  <input type ="radio" id="nam" value="nam" name="name" formControlName="name">
-  <label for="nam">Nam</label>
-  <input type ="radio" id="nu" value="nu" name="name" formControlName="name">
-  <label for="nu">Nữ</label>
-  <input type ="radio" id="khac" value="khac" name="name" formControlName="name">
-  <label for="khac">Khác</label><br>
+  <form class="form" [formGroup]="fomReactive"(submit)="saveInformation()" style="text-align: center">
+    <div style="margin-right: 500px; margin-left: 500px; color: white">
 
-  <label>Ngày sinh: </label><br>
-  <input type="date"><br>
+      <div>
+        <label class="form-label animationTop delay-03">Email:</label><br>
+        <span style="color: red"*ngIf="fomReactive.controls.email.hasError('email')"></span>
+        <input class="form-control animationTop delay-04" type="text" placeholder="Email" formControlName="email"/>
+      </div>
 
-  <label>Số CMND:</label><br>
-  <span style="color: red" *ngIf="fomReactive.controls.idCard.hasError('required') && fomReactive.controls.idCard.touched">Số CMND không được để trống</span>
-  <span style="color: red" *ngIf="fomReactive.controls.idCard.hasError('pattern')">Số CMND chưa đúng định dạng</span>
-  <input formControlName="idCard"><br>
+      <div>
+        <label class="form-label animationTop delay-03">Pass word:</label><br>
+       <span *ngIf="fomReactive.get('passwordGroup').hasError('minlength','password') && fomReactive.get('passwordGroup').get('password').dirty"></span>
+        <span  *ngIf="fomReactive.get('passwordGroup').hasError('required','password') && fomReactive.get('passwordGroup').get('password').touched"></span>
+        <input class="form-control animationTop delay-04" type="password" placeholder="Pass word"
+               formControlName="password"/>
+      </div>
 
-  <label>Số điện thoại:</label><br>
-  <span style="color: red" *ngIf="fomReactive.controls.phoneNumber.hasError('required') && fomReactive.controls.phoneNumber.touched">Số điện thoại không được để trống</span>
-  <span style="color: red" *ngIf="fomReactive.controls.phoneNumber.hasError('pattern')">Số điện thoại không đúng định dạng</span>
-  <input formControlName="phoneNumber"><br>
+      <div>
+        <label class="form-label animationTop delay-05">Confirm Password :</label><br>
+        <span  *ngIf="fomReactive.get('passwordGroup').hasError('notSame') && fomReactive.get('passwordGroup').touched"></span>
+        <input class="form-control animationTop delay-06" type="password" placeholder="Confirm Password" formControlName="confirmPassword"/>
+      </div>
 
-  <label>Địa chỉ: </label><br>
-  <span style="color: red" *ngIf="fomReactive.controls.address.hasError('required') && fomReactive.controls.address.touched">Địa chỉ không được để trống</span>
-  <input formControlName="address"><br>
-  <button type="submit">Lưu</button>
-</form>
+      <div>
+        <label class="form-label animationTop delay-07">Country :</label><br>
+        <select style="font-size: 15px; text-align: center" class="animationTop delay-08"  formControlName="country">
+          <option value="">Country :</option>
+          <option *ngFor="let item of countryList" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
 
+      <div>
+        <label class="form-label animationTop delay-05"> Age:</label><br>
+        <span  *ngIf="!fomReactive.controls.age?.valid && (fomReactive.controls.age?.dirty
+    ||fomReactive.controls.age?.touched)"></span>
+        <input class="form-control animationTop delay-06" type="number" placeholder="Age" formControlName="age"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-08">Gender:</label><br>
+        <label><input type="radio" value="male" name="gender" formControlName="gender"> Male</label>
+        <label><input type="radio" value="female" name="gender" formControlName="gender"> Female</label>
+        <label><input type="radio" value="LGBT" name="gender" formControlName="gender"> LGBT</label>
+
+      </div>
+
+
+      <div style="text-align: center">
+        <input type="submit" value="Save"
+               class="m-3 btn btn-outline-primary animationTop delay-19">
+      </div>
+
+    </div>
+  </form>
+</div>

@@ -1,9 +1,10 @@
 export interface Information {
   id?: number;
-  name?: string;
-  gender?: boolean;
-  dayOfBirth?: string;
-  idCard?: string;
-  phoneNumber?: string;
-  address?: string;
+  email?:string,
+  password?:string,
+  confirmPassword?:string,
+  country?:string,
+  age?:number,
+  gender?:number,
+  phone?:string
 }
