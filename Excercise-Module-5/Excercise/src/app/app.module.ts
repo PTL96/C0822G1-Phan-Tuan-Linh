@@ -14,6 +14,8 @@ import { CountdowTimerComponent } from './ss5-Component-Interaction/countdow-tim
 import { RatingBarComponent } from './ss5-Component-Interaction/rating-bar/rating-bar.component';
 import { InformationFormComponent } from './ss6-AngularForm/information-form/information-form.component';
 import { LoginComponent } from './ss6-AngularForm/login/login.component';
+import { DictionaryComponent } from './ss7-Service-Router/dictionary/dictionary.component';
+import { DictionaryDetailComponent } from './ss7-Service-Router/dictionary-detail/dictionary-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { LoginComponent } from './ss6-AngularForm/login/login.component';
     CountdowTimerComponent,
     RatingBarComponent,
     InformationFormComponent,
-    LoginComponent
+    LoginComponent,
+    DictionaryComponent,
+    DictionaryDetailComponent
   ],
   imports: [
     BrowserModule,

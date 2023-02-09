@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">English</th>
+    <th scope="col">Dịch</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of dictionary">
+    <td>{{item.id}}</td>
+    <td>{{item.english}}</td>
+    <td>
+      <button type="button" [routerLink]="['/dictionary/detail', item.id]" class="btn btn-info">Dịch</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
