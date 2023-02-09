@@ -1,0 +1,86 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "code": "CG-1234",
+      "name": "Victus",
+      "price": 23400000,
+      "origin": "China",
+      "other": "Black",
+      "category": {
+        "id": 2,
+        "name": "Laptop"
+      }
+    },
+    {
+      "id": 2,
+      "code": "CG-1235",
+      "name": "LG",
+      "price": 13000000,
+      "origin": "China",
+      "other": "Black",
+      "category": {
+        "id": 4,
+        "name": "Television"
+      }
+    },
+    {
+      "id": 3,
+      "code": "CG-1236",
+      "name": "Iphone 14",
+      "price": 26000000,
+      "origin": "America",
+      "other": "Violet",
+      "category": {
+        "id": 1,
+        "name": "Phones"
+      }
+    },
+    {
+      "id": 4,
+      "code": "CG-1298",
+      "name": "Vio-7382",
+      "price": 16000000,
+      "origin": "China",
+      "other": "Silver",
+      "category": {
+        "id": 3,
+        "name": "Washing machine"
+      }
+    },
+    {
+      "id": 5,
+      "code": "CG-0998",
+      "name": "Iphone 12",
+      "price": 12000000,
+      "origin": "Apple",
+      "other": "Silver",
+      "category": {
+        "id": 1,
+        "name": "Phones"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Phones"
+    },
+    {
+      "id": 2,
+      "name": "Laptop"
+    },
+    {
+      "id": 3,
+      "name": "Washing machine"
+    },
+    {
+      "id": 4,
+      "name": "Television"
+    },
+    {
+      "id": 5,
+      "name": "Fridge"
+    }
+  ]
+}
