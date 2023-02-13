@@ -1,0 +1,62 @@
+<div id="container">
+  <a>
+    <button routerLink="/" type="button" class="btn btn-primary" value="Back"
+            style="float: right; font-size: 16px; margin-top: 57px">Back
+    </button>
+  </a>
+  <h1 style="margin-left: 40%; margin-top: 60px">THÊM MỚI SẢN PHẨM</h1>
+
+  <form [formGroup]="updateForm" (submit)="updateSubmit()" class="form" style="text-align: center">
+    <div style="margin-right: 500px; margin-left: 500px; color: white">
+
+      <div>
+        <input hidden class="form-control animationTop delay-03" type="text" formControlName="id"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-03">Mã sản phẩm:</label><br>
+        <input class="form-control animationTop delay-04" type="text" placeholder="Mã sản phẩm" formControlName="code"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-03">Tên sản phẩm:</label><br>
+        <input class="form-control animationTop delay-04" type="text" placeholder="Tên sản phẩm" formControlName="name"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Giá bán :</label><br>
+        <input class="form-control animationTop delay-06" type="number" placeholder="Giá bán" formControlName="price"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-07">Loại sản phẩm :</label><br>
+        <select style="font-size: 15px; text-align: center" class="animationTop delay-08" formControlName="category">
+          <option value="">Loại sản phẩm :</option>
+          <option *ngFor="let item of category" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Nhà sản xuất :</label><br>
+        <input class="form-control animationTop delay-06" type="text" placeholder="Nhà sản xuất" formControlName="origin"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-05"> Ngày sản xuất :</label><br>
+        <input class="form-control animationTop delay-06" type="date" placeholder="Ngày sản xuất" formControlName="starDay"/>
+      </div>
+
+      <div>
+        <label class="form-label animationTop delay-08">Mô tả :</label><br>
+        <input class="form-control animationTop delay-09" type="text" placeholder="Mô tả" formControlName="other"/>
+      </div>
+
+
+      <div style="text-align: center">
+        <input type="submit" value="Save"
+               class="m-3 btn btn-outline-primary animationTop delay-19">
+      </div>
+
+    </div>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "code": "CG-1234",
+      "name": "IPhone 12",
+      "price": 18000000,
+      "starDay": "2022-11-12",
+      "origin": "U.S",
+      "other": "Black",
+      "category": {
+        "id": 1,
+        "name": "Phones"
+      }
+    },
+    {
+      "id": 2,
+      "code": "CG-12",
+      "name": "áđa",
+      "price": 123132,
+      "starDay": "2023-02-04",
+      "origin": "eqư12",
+      "other": "qưdqưd",
+      "category": {
+        "id": 2,
+        "name": "Lap top"
+      }
+    },
+    {
+      "id": 3,
+      "code": "1122qq",
+      "name": "ưqeqewqe",
+      "price": 213333,
+      "starDay": "2023-02-15",
+      "origin": "12eqưe",
+      "other": "nooooooooooo",
+      "category": {
+        "id": 2,
+        "name": "Lap top"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Phones"
+    },
+    {
+      "id": 2,
+      "name": "Lap top"
+    },
+    {
+      "id": 3,
+      "name": "Television"
+    }
+  ]
+}
