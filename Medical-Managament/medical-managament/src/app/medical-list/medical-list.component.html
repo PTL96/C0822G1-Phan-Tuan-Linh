@@ -1,0 +1,66 @@
+
+<div id="container">
+  <button routerLink="/create" type="button" class="btn btn-primary animationTop delay-01" value="Add New"
+          style="float: right; font-size: 16px; margin-top: 57px">Thêm mới
+  </button>
+  <h1 style="margin-left: 42%; margin-top: 50px">DANH SÁCH</h1>
+  <table class="table table-hover" style="text-align: center; margin-top: 50px">
+    <thead>
+    <tr class="animationTop delay-05">
+      <th>#</th>
+      <th>Mã bệnh án</th>
+      <th>Mã bệnh nhân</th>
+      <th>Tên bệnh nhân</th>
+      <th>Ngày nhập viện</th>
+      <th>Ngày ra viện</th>
+      <th>Lý do nhập</th>
+      <th>Phương pháp trị</th>
+      <th>Bác sĩ</th>
+      <th>Sửa</th>
+      <th>Xóa</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr style="text-align: center" class="animationTop delay-06" *ngFor="let item of medical  index as i">
+      <td class="animationTop delay-07">{{i+1}}</td>
+      <td class="animationTop delay-07">{{item.medicalCode}}</td>
+      <td class="animationTop delay-07" *ngIf="item.patient">{{item.patient.patientCode}}</td>
+      <td class="animationTop delay-07" *ngIf="item.patient">{{item.patient.name}}</td>
+      <td class="animationTop delay-07" >{{item.hospitalizedDay}}</td>
+      <td class="animationTop delay-07" >{{item.hospitalDischargeDate}}</td>
+      <td class="animationTop delay-07" >{{item.reason}}</td>
+      <td class="animationTop delay-07" >{{item.treatments}}</td>
+      <td class="animationTop delay-07" >{{item.doctor}}</td>
+      <td>
+        <a [routerLink]="['/update',item.id]" class="btn btn-warning animationTop delay-8" style="font-size: 14px">Sửa</a>
+      </td>
+      <td>
+        <a class="btn btn-danger animationTop delay-9" type="button"
+           data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 14px" (click)="temp = item">Xóa</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="snow"></div>
+</div>
+
+<!-- Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-image: linear-gradient(to top,  #B5B5B5, #B5B5B5,#8273B0); overflow:hidden;">
+      <div class="modal-header">
+        <h2 style="color: white" class="modal-title fs-5" id="exampleModalLabel">Xóa thông tin sản phẩm</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p style="color:red">Bạn có chắc muốn xóa?<br><br> {{temp.medicalCode}}</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteMedical(temp.id)">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>

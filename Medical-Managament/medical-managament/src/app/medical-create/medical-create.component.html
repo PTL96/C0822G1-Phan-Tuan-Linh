@@ -1,0 +1,89 @@
+<div id="container">
+  <a>
+    <button routerLink="/" type="button" class="btn btn-primary" value="Back"
+            style="float: right; font-size: 16px; margin-top: 57px">Back
+    </button>
+  </a>
+  <h1 style="margin-left: 38%; margin-top: 30px">THÊM MỚI BỆNH ÁN</h1>
+  <form style="margin-top: 70px" [formGroup]="createForm" (ngSubmit)="create()">
+    <div style="margin-right: 500px; margin-left: 500px; color: white">
+
+      <div style="text-align: center">
+        <div>
+          <label class="form-label animationTop delay-03" style="text-align: center"> Mã bệnh án:</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.medicalCode.hasError('required') && createForm.controls.medicalCode.touched">Không được để trống</span>
+          <input class="form-control animationTop delay-06" type="text" placeholder=""
+                 formControlName="medicalCode"/>
+        </div>
+
+
+        <div>
+          <label class="form-label animationTop delay-03">Tên bệnh nhân :</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.patient.hasError('required') && createForm.controls.patient.touched">Không được để trống</span>
+          <select style="font-size: 15px; text-align: center" class="animationTop delay-08" formControlName="patient">
+            <option value=" ">Chọn bệnh nhân :</option>
+            <option *ngFor="let item of patient" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </div>
+
+
+        <div>
+          <label class="form-label animationTop delay-05"> Ngày nhập viện :</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.hospitalizedDay.hasError('required') && createForm.controls.hospitalizedDay.touched">Không được để trống</span>
+          <input class="form-control animationTop delay-06" type="date" placeholder=""
+                 formControlName="hospitalizedDay"/>
+        </div>
+
+        <div>
+          <label class="form-label animationTop delay-05"> Ngày ra :</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.hospitalDischargeDate.hasError('required') && createForm.controls.hospitalDischargeDate.touched">Không được để trống</span>
+          <input class="form-control animationTop delay-06" type="date" placeholder=""
+                 formControlName="hospitalDischargeDate"/>
+        </div>
+
+        <div>
+          <label class="form-label animationTop delay-08">Lý do :</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.reason.hasError('required') && createForm.controls.reason.touched">Không được để trống</span>
+          <span style="color: red"
+                *ngIf="createForm.controls.reason.hasError('minlength') && createForm.controls.reason.touched">Không được ít hơn 5 ký tự</span>
+          <span style="color: red"
+                *ngIf="createForm.controls.reason.hasError('maxlength') && createForm.controls.reason.touched">Không được quá 100 ký tự</span>
+          <input class="form-control animationTop delay-09" type="text" placeholder="" formControlName="reason"/>
+        </div>
+
+        <div>
+          <label class="form-label animationTop delay-08">Phương pháp :</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.treatments.hasError('required') && createForm.controls.treatments.touched">Không được để trống</span>
+          <span style="color: red"
+                *ngIf="createForm.controls.treatments.hasError('minlength') && createForm.controls.treatments.touched">Không được ít hơn 5 ký tự</span>
+          <span style="color: red"
+                *ngIf="createForm.controls.treatments.hasError('maxlength') && createForm.controls.treatments.touched">Không được quá 100 ký tự</span>
+          <input class="form-control animationTop delay-09" type="text" placeholder="" formControlName="treatments"/>
+        </div>
+
+        <div>
+          <label class="form-label animationTop delay-08">Bác sĩ :</label><br>
+          <span style="color: red"
+                *ngIf="createForm.controls.doctor.hasError('required') && createForm.controls.doctor.touched">Không được để trống</span>
+          <span style="color: red"
+                *ngIf="createForm.controls.doctor.hasError('minlength') && createForm.controls.doctor.touched">Không được ít hơn 5 ký tự</span>
+          <span style="color: red"
+                *ngIf="createForm.controls.doctor.hasError('maxlength') && createForm.controls.doctor.touched">Không được quá 100 ký tự</span>
+          <input class="form-control animationTop delay-09" type="text" placeholder="" formControlName="doctor"/>
+        </div>
+
+        <div style="text-align: center">
+          <input type="submit" value="Save"
+                 class="m-3 btn btn-outline-primary animationTop delay-19">
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
