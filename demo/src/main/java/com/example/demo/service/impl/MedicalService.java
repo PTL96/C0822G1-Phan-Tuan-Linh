@@ -5,6 +5,8 @@ import com.example.demo.repository.IMedicalRepository;
 import com.example.demo.service.IMedicalService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,10 +15,7 @@ import java.util.List;
 public class MedicalService implements IMedicalService {
     @Autowired
     private IMedicalRepository iMedicalRepository;
-    @Override
-    public List<Medical> allListMedical() {
-        return iMedicalRepository.allList();
-    }
+
 
     @Override
     public Medical findById(int id) {
@@ -31,5 +30,10 @@ public class MedicalService implements IMedicalService {
     @Override
     public void save(Medical medical) {
         iMedicalRepository.save(medical);
+    }
+
+    @Override
+    public Page<Medical> allListMedical(Pageable pageable) {
+        return iMedicalRepository.allList(pageable);
     }
 }
