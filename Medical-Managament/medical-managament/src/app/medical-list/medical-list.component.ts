@@ -10,7 +10,11 @@ import {Medical} from "../model/medical";
 export class MedicalListComponent implements OnInit {
 medical: Medical[] = [];
 temp: Medical = {};
-
+  number: number | undefined;
+  totalPages: number | undefined;
+  pageNumbers: number[];
+  first: boolean | undefined;
+  last: boolean;
   constructor(private medicalService: MedicalService) {
   }
 
@@ -23,6 +27,7 @@ getAllList(){
       console.log(data)
       this.medical = data;
     })
+
 }
 deleteMedical(id: number | undefined){
     this.medicalService.delete(this.temp.id).subscribe(deleted=>{
@@ -30,4 +35,15 @@ deleteMedical(id: number | undefined){
       this.ngOnInit();
     })
 }
+
+  getAllPage(page: number) {
+    this.medicalService.getAllPage(page).subscribe(next => {
+      console.log(next);
+      this.medical = next.content;
+      this.number = next.number;
+      this.totalPages = next.totalPages;
+      this.first = next.first;
+      this.last = next.last;
+    });
+  }
 }
