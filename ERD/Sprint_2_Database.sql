@@ -31,6 +31,11 @@ CREATE TABLE `category` (
   `name_category` VARCHAR(45),
   PRIMARY KEY (`id_category`));
   
+  CREATE TABLE `size_product` (
+  `id_size` INT auto_increment NOT NULL,
+  `size_number` INT,
+  PRIMARY KEY (`id_size`));
+  
   CREATE TABLE `product` (
   `id_product` INT auto_increment NOT NULL,
   `name_product` VARCHAR(45),
@@ -39,7 +44,9 @@ CREATE TABLE `category` (
   `price` DOUBLE,
   `avatar` VARCHAR(500) ,
   `id_category` INT,
+  `id_size` INT,
 	foreign key(id_category) references `category`(id_category),
+	foreign key(id_size) references `size_product`(id_size),
   PRIMARY KEY (`id_product`));
   
     CREATE TABLE `warehouse` (
